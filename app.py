@@ -4,10 +4,8 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Load trained model
 model = pickle.load(open("model.pkl", "rb"))
 
-# Destination mapping (IMPORTANT)
 dest_map = {
     "Manali": 0,
     "Goa": 1,
@@ -25,7 +23,6 @@ dest_map = {
     "Ooty": 13,
     "Andaman": 14
 }
-
 @app.route('/')
 def home():
     return render_template("index.html")
