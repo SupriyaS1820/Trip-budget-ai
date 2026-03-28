@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Trip Planner</title>
+</head>
+<body style="font-family: Arial; text-align:center;">
+
+<h1>🌍 AI Trip Budget Planner</h1>
+
+<form action="/predict" method="post">
+
+    <label>Destination:</label><br>
+    <select name="destination">
+        <option>Manali</option>
+        <option>Goa</option>
+        <option>Jaipur</option>
+        <option>Delhi</option>
+        <option>Mumbai</option>
+        <option>Shimla</option>
+        <option>Udaipur</option>
+        <option>Agra</option>
+        <option>Varanasi</option>
+        <option>Kerala</option>
+        <option>Darjeeling</option>
+        <option>Rishikesh</option>
+        <option>Ladakh</option>
+        <option>Ooty</option>
+        <option>Andaman</option>
+    </select><br><br>
+
+    <label>Days:</label><br>
+    <input type="number" name="days" required><br><br>
+
+    <label>Budget (₹):</label><br>
+    <input type="number" name="budget" required><br><br>
+
+    <button type="submit">✨ Plan My Trip</button>
+</form>
+
+{% if hotel %}
+<hr>
+<h2>📊 Trip Breakdown</h2>
+
+<p>🏨 Hotel Cost: ₹{{hotel}}</p>
+<p>🚗 Travel Cost: ₹{{travel}}</p>
+<p>🍔 Food Cost: ₹{{food}}</p>
+<p>💰 Remaining Budget: ₹{{remaining}}</p>
+<p>✈️ Suggested Mode: {{mode}}</p>
+{% endif %}
+
+</body>
+</html>
